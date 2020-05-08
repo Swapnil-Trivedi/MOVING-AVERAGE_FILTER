@@ -37,7 +37,7 @@ so after collecting samples and forming a data frame our sensor sends the data t
 #### Here's what our Raw data looks like 
 
 ![](/ACTUAL_DATA_VS_NOISE.png)
-Well from that we can clearly say that our data frame is far from the actual data we need to calculate. if it was not for the red value we would have never guessed the underlying data.
+Well from that we can clearly say that our data frame is far from the actual data we need to calculate. if it was not for the red line we would have never guessed the underlying data.
 so in order to clean up our data frame and to come to single point of approximation we apply a single mathematical approach of error reduction.
 we use a MOVING AVERAGE FILTER
 
