@@ -20,15 +20,29 @@ But not even our Data frame is prone to noise injection and in order to find out
 ###### Hence we need a filtering system that can reduce error in our data frame and provide with a precise and close approximation.
 
 ## IMPLEMENTATION
+
 #### SCENARIO
+
 let's take example of a flow meter. A flow meter is a device use to measure the volume and rate of flow of fluid from a pipeline.let's assume a situation where the actual rate of flow of fluid in the pipe is unknown and our sensor comes with the following specifications.
+
 ##### specifications : 
 - Device Error - 1% of Measured Value
 - Sample Rate  - 1 sample/sec
-- Framing Time - 1 minute i.e time over which a Data frame is generated
-in the given scenario our sensor have a sample rate of 1 and framing time of 1 minute, hence we will end up with a data frame of 60 samples every minute.
-let's assume that our flow meter needs to measure a rate of 75 l/m. what actually happen is in an interval of 60 seconds the sensor will generate 60 individual data points or samples all of which might be subject to noise.
+- Framing Time - 1 minute i.e time over which a Data frame is generated.
+
+In the given scenario our sensor have a sample rate of 1 and framing time of 1 minute, hence we will end up with a data frame of 60 samples every minute.
+let's assume that our flow meter needs to measure a rate of 75 litre/meter. what actually happen is in an interval of 60 seconds the sensor will generate 60 individual data points or samples all of which might be subject to noise.
 so after collecting samples and forming a data frame our sensor sends the data to a controller for further manipulation.
 
 #### Here's what our Raw data looks like 
-![](
+
+![](/ACTUAL_DATA_VS_NOISE.png)
+Well from that we can clearly say that our data frame is far from the actual data we need to calculate. if it was not for the red value we would have never guessed the underlying data.
+so in order to clean up our data frame and to come to single point of approximation we apply a single mathematical approach of error reduction.
+we use a MOVING AVERAGE FILTER
+
+##### The process is fairly simple but actually is quite impactful
+- we take our samples individually start iterrating through them
+- calculate the sum of individual sample as we iterrate 
+- find the average for each data point
+or to sum up we simply follow this mathematical approach
