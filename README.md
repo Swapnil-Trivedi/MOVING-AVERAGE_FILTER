@@ -87,4 +87,4 @@ well in order to generate a better point of estimation or approximation many mde
 
 ### CONCLUSION
 
-Well so we Implemented a FIR (Finite impulse response) Filter which can reduce noisee from our sensor data and provide with a much more stable and error free state estimation for the controller.
+Well so we Implemented a FIR (Finite impulse response) Filter which can reduce noise from our sensor data and provide with a much more stable and error free state estimation for the controller.
