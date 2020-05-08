@@ -45,4 +45,46 @@ we use a MOVING AVERAGE FILTER
 - we take our samples individually start iterrating through them
 - calculate the sum of individual sample as we iterrate 
 - find the average for each data point
+
 or to sum up we simply follow this mathematical approach
+![](/formula.png)
+
+##### Well let's code it up 
+```
+
+# MOVING AVERAGE FILTER this cell here is our entire filter function
+#so we do a step by step increment in our average value and try to plot the data
+# so every time we take a data we get average of it
+average=0
+suml=0
+avglist=[]
+n=1
+for i in range(0,60):
+    suml=suml+data[i]
+    average=(suml)/n
+    avglist.append(average)
+    n=n+1
+
+
+```
+so after passing our data frame from our SMA (Simple Moving Average) Filter we obtain our estimation matrix which visually looks ssomething like this :
+![](/APPLICATION_OF_MOVING_FILTER.png)
+well that's not magic put plain old MATH!!
+so we can clearly say that our samples here are much more organized and for any set of value it will try to establish a point of singularity or approximation with less error.The [script here](/FILTERS.ipynb) shows a step by step of implementing the filter. 
+
+since i have used a random function to stimulate the inputs from a sensor the wworking of the filter can be verified every time you run the script, every single time the filter helps in finding the closest approximation for our value.
+
+But still we haven't taken device error in account because that depends from device to device and also from the manufacturer.
+
+##### so what happens when our device/sensor actually have a device error or a measurement error???
+well plain old math again we simply subtract the device error from the measured value to get our true value.
+
+let's just visualize that too. let;s assume that the above mentioned flow meter comes with a device error of 1% so we simply take the 1% of a sample and subtract it from the sample itsself, now let's feed the new data frame (the more correct one ) to our filter.
+
+And this is what we have. our end result is a completely( well almost there) free data which can be used in a multiple way.
+![](/ERROR_CORRECTION_IN_SMF.png)
+well in order to generate a better point of estimation or approximation many mdern sensors comes with an unbelivable sample rate, well because more sample rate means more data and the more there is the better error reduction is possible.
+
+### CONCLUSION
+
+Well so we Implemented a FIR (Finite impulse response) Filter which can reduce noisee from our sensor data and provide with a much more stable and error free state estimation for the controller.
