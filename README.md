@@ -1,5 +1,5 @@
 # MOVING_AVERAGE_FILTER
-Implementation and study of a Moving Average Filter to remove noise from sensor used in industrial appliacations.
+Implementation and study of a Moving Average Filter to remove noise from sensors used in industrial appliacations.
 
 ## INTRODUCTION
 Moving Average Filter : The moving average filter is a simple Low Pass FIR (Finite Impulse Response) filter commonly used for regulating an array of sampled data/signal. It takes M samples of input at a time and takes the average of those to produce a single output point.
@@ -69,7 +69,7 @@ for i in range(0,60):
 ```
 so after passing our data frame from our SMA (Simple Moving Average) Filter we obtain our estimation matrix which visually looks ssomething like this :
 ![](/APPLICATION_OF_MOVING_FILTER.png)
-well that's not magic put plain old MATH!!
+well that's not magic but plain old MATH!!
 so we can clearly say that our samples here are much more organized and for any set of value it will try to establish a point of singularity or approximation with less error.The [script here](/FILTERS.ipynb) shows a step by step of implementing the filter. 
 
 since i have used a random function to stimulate the inputs from a sensor the wworking of the filter can be verified every time you run the script, every single time the filter helps in finding the closest approximation for our value.
@@ -86,5 +86,4 @@ And this is what we have. our end result is a completely( well almost there) fre
 well in order to generate a better point of estimation or approximation many mdern sensors comes with an unbelivable sample rate, well because more sample rate means more data and the more there is the better error reduction is possible.
 
 ### CONCLUSION
-
-Well so we Implemented a FIR (Finite impulse response) Filter which can reduce noise from our sensor data and provide with a much more stable and error free state estimation for the controller.
+We Implemented a FIR (Finite impulse response) Filter which can reduce noise from our sensor data and provide with a much more stable and error free state estimation for the controller.
