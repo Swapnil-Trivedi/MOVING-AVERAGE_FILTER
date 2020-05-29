@@ -83,7 +83,7 @@ let's just visualize that too. let;s assume that the above mentioned flow meter 
 
 And this is what we have. our end result is a completely( well almost there) free data which can be used in a multiple way.
 ![](/ERROR_CORRECTION_IN_SMF.png)
-well in order to generate a better point of estimation or approximation many mdern sensors comes with an unbelivable sample rate, well because more sample rate means more data and the more there is the better error reduction is possible.
+well in order to generate a better point of estimation or approximation many modern sensors comes with an unbelivable sample rate, well because more sample rate means more data and the more there is the better error reduction is possible.
 
 ### CONCLUSION
 We Implemented a FIR (Finite impulse response) Filter which can reduce noise from our sensor data and provide with a much more stable and error free state estimation for the controller.
