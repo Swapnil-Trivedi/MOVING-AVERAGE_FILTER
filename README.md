@@ -41,7 +41,7 @@ Well from that we can clearly say that our data frame is far from the actual dat
 so in order to clean up our data frame and to come to single point of approximation we apply a single mathematical approach of error reduction.
 we use a MOVING AVERAGE FILTER
 
-##### The process is fairly simple but actually is quite impactful
+##### The process is fairly simple but very impactful
 - we take our samples individually start iterrating through them
 - calculate the sum of individual sample as we iterrate 
 - find the average for each data point
